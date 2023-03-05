@@ -236,9 +236,10 @@ p {
 }
 
 .newsletter-input {
-  width: 358px;
-  height: 50px;
-  padding: 0;
+  display: inline-block;
+  width: 323px;
+  padding: 15px 16px;
+  font-size: 16px;
   color: var(--contact-color);
   background-color: var(--bg-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -246,22 +247,33 @@ p {
 }
 
 .newsletter-button {
+  position: relative;
   display: inline-block;
-  background-color: var(--active-color);
-  color: var(--text-color);
-  font: inherit;
   height: 50px;
   width: 200px;
-  font-weight: 700;
+  margin-left: 12px;
   padding: 0;
-  margin: 0 auto;
+  color: var(--text-color);
+  font: inherit;
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  background-color: var(--active-color);
   border-radius: 4px;
   border: 0;
   cursor: pointer;
 }
 
+.newsletter-button span {
+  padding-left: 42px;
+}
+
 .newsletter-icon {
-  /* padding: 13px 13px 13px 20px; */
+  position: absolute;
+  top: 13px;
+  right: 28px;
   fill: var(--text-color);
 }
 
@@ -552,6 +564,8 @@ p {
   margin-bottom: 10px;
   border: 1px solid var(--form-border);
   border-radius: 4px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .label-area:focus-within {
@@ -563,6 +577,7 @@ p {
   width: 80%;
   padding: 11px;
   font-size: 16px;
+  letter-spacing: 0.03em;
   border: none;
   outline: none;
 }
@@ -570,8 +585,10 @@ p {
 .input-textarea {
   resize: none;
   width: 90%;
+  z-index: -1;
   padding: 12px 16px;
   font-size: 12px;
+  letter-spacing: 0.03em;
   border: none;
   outline: none;
 }
@@ -589,13 +606,36 @@ p {
 .privacy {
   display: block;
   margin: 20px auto 30px;
-
+  text-align: center;
   font-size: 14px;
+  letter-spacing: 0.03em;
   color: var(--p-color);
+  cursor: pointer;
 }
 
 .privacy a {
   color: var(--active-color);
+}
+
+.custom-input {
+  width: 11px;
+  height: 12px;
+  border: 2px solid var(--main-color);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.custom-input:checked {
+  width: 15px;
+  height: 16px;
+  border: none;
+  background-image: url(../images/icons.svg#icon-check);
+}
+
+.hidden {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .submit-button {
